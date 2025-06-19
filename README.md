@@ -77,4 +77,6 @@ Passionate about data analysis and business intelligence.
 
 ## 📌 Notes
 
-> This project was developed in collaboration with Matías Bianco and Joaquín Cerdan as a final course assignment.  
+> This project was developed in collaboration with Matías Bianco and Joaquín Cerdan as a final course assignment.
+> All data and visualizations in this project are in Spanish, as it was originally developed as part of an academic assignment at UTN (Argentina). Descriptions and documentation are provided in English for global accessibility.
+

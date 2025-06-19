@@ -1,82 +1,80 @@
-# 🏎️ Fórmula 1 - Análisis de Pilotos Históricos
+# 🏎️ Formula 1 – Historical Driver Analysis
 
-Este proyecto fue desarrollado como trabajo final para la materia **Análisis de Datos** (UTN - FRC), con el objetivo de aplicar herramientas de Python, SQL y Power BI sobre un dataset real y obtener insights relevantes mediante un análisis exploratorio, visualización y comunicación efectiva.
+This project was developed as a final assignment for the **Data Analysis** course at UTN – FRC. The goal was to apply tools like Python, SQL, and Power BI on a real dataset to extract valuable insights through data cleaning, exploration, visualization, and effective storytelling.
 
 ---
 
-## 📦 Contenido del Proyecto
+## 📦 Project Structure
 
 - **`data/`**
-  - `raw_data.csv`: Dataset original descargado desde Kaggle.
-  - `clean_data.csv`: Dataset final, limpio y procesado, utilizado para Power BI.
+  - `raw_data.csv`: Original dataset downloaded from Kaggle.
+  - `clean_data.csv`: Cleaned and processed dataset used in Power BI.
 
 - **`notebooks/`**
-  - `f1_analysis.ipynb`: Notebook de Google Colab con todo el proceso de análisis de datos, limpieza, consultas SQL, EDA y visualizaciones.
+  - `f1_analysis.ipynb`: Google Colab notebook including SQL queries, data processing, EDA, and visualizations.
 
 - **`powerbi/`**
-  - `f1_dashboard.pbix`: Dashboard interactivo en Power BI con filtros y visualizaciones clave.
+  - `f1_dashboard.pbix`: Interactive dashboard built in Power BI with filters and key visualizations.
 
 - **`presentation/`**
-  - `resumen_f1_analysis.pdf`: Presentación del trabajo final con estructura clara, insights y conclusiones principales.
+  - `resumen_f1_analysis.pdf`: Final presentation with structure, key insights, and conclusions.
 
 ---
 
-## 🔍 Descripción del Dataset
+## 🔍 Dataset Overview
 
-Dataset histórico de pilotos de Fórmula 1, con información sobre:
-- Nacionalidad
-- Años activos
-- Campeonatos ganados
-- Carreras ganadas, podios, puntos
-- Métricas derivadas como porcentaje de victorias y puntos por carrera
+Historical dataset of Formula 1 drivers, including:
+- Nationality
+- Active years
+- Championships won
+- Race wins, podiums, and total points
+- Derived metrics: win rate and points per race
 
-Fuente: Kaggle
+Source: Kaggle
 
 ---
 
-## 🧰 Herramientas Utilizadas
+## 🧰 Tools & Technologies
 
 - **Python (Google Colab):**
   - Pandas, Seaborn, Matplotlib
-  - sqlite3 (SQL embebido)
+  - sqlite3 (embedded SQL)
 - **Power BI**
-- **Canva** (para presentación)
-- **GitHub / Notion** (para portafolio)
+- **Canva** (for presentation design)
+- **GitHub / Notion** (portfolio management)
 
 ---
 
-## 📊 Principales Análisis
+## 📊 Key Analyses
 
-- Detección y tratamiento de valores nulos (campeonatos no ganados).
-- Verificación de duplicados e inconsistencias.
-- Identificación de outliers estadísticos.
-- Análisis de correlación entre variables clave (poles, victorias, podios).
-- Exploración de la duración típica de la carrera de un piloto.
-- Segmentación histórica por décadas de actividad.
-
----
-
-## 🧠 Conclusiones Relevantes
-
-- La **Fórmula 1 es un deporte extremadamente exclusivo**, con una gran mayoría de pilotos que no alcanzan victorias ni campeonatos.
-- **Lewis Hamilton** se destaca como el mejor piloto en múltiples métricas (🐐).
-- Existen fuertes relaciones entre la performance en clasificación (poles), podios y carreras ganadas.
-- Las carreras de los pilotos suelen ser breves (1-2 años promedio) y cada vez más selectivas.
+- Null value handling (e.g., missing championships)
+- Duplicate and inconsistency checks
+- Statistical outlier detection
+- Correlation analysis between key performance metrics
+- Career duration trends by decade
+- Visual exploration through custom charts and SQL filters
 
 ---
 
-## 👤 Autor
+## 🧠 Insights
 
-Proyecto desarrollado por:  
+- **Formula 1 is extremely exclusive**: most drivers never win a race or a title.
+- **Lewis Hamilton** stands out across almost every metric (🐐).
+- Pole positions, wins, and podiums show strong correlation.
+- The average F1 driver’s career is short (1–2 years) and becoming increasingly selective.
+
+---
+
+## 👤 Author
+
+Project developed by:  
 **Joaquín Ferrer**  
-Estudiante avanzado de Ingeniería Industrial – UTN  
-Apasionado por el análisis de datos y la inteligencia de negocios.  
+Advanced Industrial Engineering Student – UTN  
+Passionate about data analysis and business intelligence.  
 [LinkedIn](https://www.linkedin.com/in/joaquin-ferrer/) | joacoferrer00@gmail.com
 
 ---
 
-## 📌 Notas
+## 📌 Notes
 
-> Este proyecto fue realizado en equipo junto a Matías Bianco y Joaquín Cerdan para su entrega final.  
-> El dashboard de Power BI puede visualizarse [aquí](http://surl.li/dqlmkw) *(link público incluido en presentación)*.
-
+> This project was developed in collaboration with Matías Bianco and Joaquín Cerdan as a final course assignment.  

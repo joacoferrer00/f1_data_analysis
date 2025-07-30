@@ -65,13 +65,16 @@ Source: Kaggle
 
 ---
 
-## 👤 Author
+## 👤 About Me
 
-Project developed by:  
-**Joaquín Ferrer**  
-Advanced Industrial Engineering Student – UTN  
-Passionate about data analysis and business intelligence.  
-[LinkedIn](https://www.linkedin.com/in/joaquin-ferrer/) | joacoferrer00@gmail.com
+**Joaquín Ferrer**
+
+Industrial Engineer · Data Analyst · Power BI · SQL
+
+
+🔗 [LinkedIn](https://www.linkedin.com/in/joaqu%C3%ADnferrer/) 
+📘 [Notion Portfolio](https://sun-sofa-ba8.notion.site/Joaqu-n-Ferrer-Portafolio-Profesional-2163e852260a808f9377e971506e0f1f?source=copy_link) 
+💻 [GitHub](https://github.com/joacoferrer00)
 
 ---
 

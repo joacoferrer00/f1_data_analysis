@@ -1,85 +1,122 @@
 # 🏎️ Formula 1 – Historical Driver Analysis
 
-This project was developed as a final assignment for the **Data Analysis** course at UTN – FRC. The goal was to apply tools like Python, SQL, and Power BI on a real dataset to extract valuable insights through data cleaning, exploration, visualization, and effective storytelling.
+This project explores the career paths of Formula 1 drivers using data analysis techniques in Python, SQL, and Power BI. It was originally developed as a final assignment for the Data Analysis course at UTN – FRC.
 
----
+The goal was to clean, explore, and visualize historical data to understand how drivers perform over time, what metrics correlate with success, and how exclusive the world of F1 really is.
 
-## 📦 Project Structure
+## 📁 Project Structure
 
-- **`data/`**
-  - `raw_data.csv`: Original dataset downloaded from Kaggle.
-  - `clean_data.csv`: Cleaned and processed dataset used in Power BI.
+```
+├── data/
+│   ├── raw_data.csv          # Original dataset from Kaggle
+│   └── clean_data.csv        # Cleaned dataset used in analysis & Power BI
+├── notebooks/
+│   └── f1_analysis.ipynb     # Google Colab notebook (Python + SQL + Visualizations)
+├── powerbi/
+│   └── f1_dashboard.pbix     # Interactive Power BI dashboard
+├── presentation/
+│   └── resumen_f1_analysis.pdf # Summary presentation with findings
+```
 
-- **`notebooks/`**
-  - `f1_analysis.ipynb`: Google Colab notebook including SQL queries, data processing, EDA, and visualizations.
+## 📊 Dataset Overview
 
-- **`powerbi/`**
-  - `f1_dashboard.pbix`: Interactive dashboard built in Power BI with filters and key visualizations.
+- **Source:** [Kaggle – Formula 1 Drivers Dataset](https://www.kaggle.com/datasets/dubradave/formula-1-drivers-dataset)
+- **Based on:** Wikipedia data, accurate as of the 2023 Bahrain GP
+- **Scope:** Only includes officially entered drivers (excluding Friday practice)
 
-- **`presentation/`**
-  - `resumen_f1_analysis.pdf`: Final presentation with structure, key insights, and conclusions.
-
----
-
-## 🔍 Dataset Overview
-
-Historical dataset of Formula 1 drivers, including:
-- Nationality
-- Active years
-- Championships won
-- Race wins, podiums, and total points
-- Derived metrics: win rate and points per race
-
-Source: Kaggle
-
----
+### Key Variables
+- Driver name, nationality
+- Years active, championships
+- Race entries, starts, wins, podiums
+- Pole positions, fastest laps, total points
 
 ## 🧰 Tools & Technologies
 
-- **Python (Google Colab):**
-  - Pandas, Seaborn, Matplotlib
-  - sqlite3 (embedded SQL)
-- **Power BI**
-- **Canva** (for presentation design)
-- **GitHub / Notion** (portfolio management)
+- **Python** (Google Colab): `pandas`, `seaborn`, `matplotlib`, `numpy`
+- **SQL** (`sqlite3`): basic aggregations and filtering
+- **Power BI**: interactive dashboard with slicers by driver and nationality
+- **Canva**: presentation design
+- **GitHub / Notion**: project and portfolio management
 
----
+## 🧹 Data Preparation Highlights
 
-## 📊 Key Analyses
+Basic preprocessing steps included:
 
-- Null value handling (e.g., missing championships)
-- Duplicate and inconsistency checks
-- Statistical outlier detection
-- Correlation analysis between key performance metrics
-- Career duration trends by decade
-- Visual exploration through custom charts and SQL filters
+```python
+f1_df.info()
+f1_df.isnull().sum()
+f1_df.duplicated().sum()
+f1_df.describe()
+```
 
----
+Most fields were clean, with very few nulls or inconsistencies. Data was exported as `clean_data.csv` for use in Power BI and SQL.
 
-## 🧠 Insights
+## 🔍 Sample SQL Queries
 
-- **Formula 1 is extremely exclusive**: most drivers never win a race or a title.
-- **Lewis Hamilton** stands out across almost every metric (🐐).
-- Pole positions, wins, and podiums show strong correlation.
-- The average F1 driver’s career is short (1–2 years) and becoming increasingly selective.
+```sql
+-- Top 10 drivers by race wins
+SELECT * FROM f1_dataset 
+ORDER BY Race_Wins DESC 
+LIMIT 10;
 
----
+-- Top 5 drivers by championships
+SELECT Driver, SUM(Championships) AS Total_Championships
+FROM f1_dataset
+GROUP BY Driver
+ORDER BY Total_Championships DESC
+LIMIT 5;
+
+-- Most common nationalities
+SELECT Nationality, COUNT(*) AS Total
+FROM f1_dataset
+GROUP BY Nationality
+ORDER BY Total DESC
+LIMIT 10;
+```
+
+## 📈 Exploratory Analysis (Python)
+
+Using Seaborn and Matplotlib, the analysis included:
+
+- Histogram of career length (most drivers lasted ≤1 year)
+- Scatter plot of active years vs. race starts (linear relationship)
+- Correlation heatmap across numerical features (e.g. wins, poles, podiums)
+
+```python
+sns.heatmap(f1_df.corr(), annot=True, cmap='coolwarm')
+```
+
+## 📊 Power BI Dashboard
+
+A simple dashboard was created to summarize driver performance metrics. Includes slicers for driver and nationality, showing key stats like race starts, podiums, wins, poles, and titles.
+
+## 🧠 Key Insights
+
+- **Hamilton leads across the board:** wins, points per race, and consistency
+- **Strong correlation** between pole positions, wins, and podiums
+- **F1 is highly exclusive:** most drivers never win, and average careers are short (1–2 seasons)
+- **Nationality distribution** is dominated by a few key countries
+
+## 💬 Lessons Learned
+
+This project helped solidify key skills in the end-to-end data analysis pipeline:
+
+- **Exploratory Data Analysis:** framing meaningful questions and translating them into code and visuals
+- **SQL for summarization:** quick profiling of key trends (wins, nationalities, etc.)
+- **Storytelling:** combining visuals and insights to explain patterns clearly
+- **Technical fluency:** integrating multiple tools (Python, SQL, Power BI) into a single workflow
 
 ## 👤 About Me
 
-**Joaquín Ferrer**
-
+**Joaquín Ferrer**  
 Industrial Engineer · Data Analyst · Power BI · SQL
 
-
-🔗 [LinkedIn](https://www.linkedin.com/in/joaqu%C3%ADnferrer/) 
-📘 [Notion Portfolio](https://sun-sofa-ba8.notion.site/Joaqu-n-Ferrer-Portafolio-Profesional-2163e852260a808f9377e971506e0f1f?source=copy_link) 
-💻 [GitHub](https://github.com/joacoferrer00)
-
----
+- 🔗 [LinkedIn](https://linkedin.com/in/joaquin-ferrer)
+- 📘 [Notion Portfolio](https://notion.so/joaquin-ferrer)
+- 💻 [GitHub](https://github.com/joaquin-ferrer)
 
 ## 📌 Notes
 
-> This project was developed in collaboration with Matías Bianco and Joaquín Cerdan as a final course assignment.
-> All data and visualizations in this project are in Spanish, as it was originally developed as part of an academic assignment at UTN (Argentina). Descriptions and documentation are provided in English for global accessibility.
+This project was developed in collaboration with **Matías Bianco** and **Joaquín Cerdan** as part of a final assignment for the Data Analysis course at UTN (Argentina).
 
+All data and visualizations were originally developed in Spanish. This documentation is provided in English for accessibility.
